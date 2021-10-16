@@ -1,3 +1,8 @@
 <div id="messages">
   <%= render @messages %>
 </div>
+
+<%= form_with model: @message do |form| %>
+  <%= form.text_field :body %>
+  <%= form.submit %>
+<% end %>
