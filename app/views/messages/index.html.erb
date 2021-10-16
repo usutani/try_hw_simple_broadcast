@@ -4,7 +4,8 @@
   <%= render @messages %>
 </div>
 
-<%= form_with model: @message do |form| %>
+<% form_data = { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }%>
+<%= form_with model: @message, data: form_data do |form| %>
   <%= form.text_field :body %>
   <%= form.submit %>
 <% end %>
