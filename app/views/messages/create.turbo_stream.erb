@@ -1,12 +1,1 @@
-<% if @message.errors.any? %>
-  <%= turbo_stream.update :error_explanation do %>
-    <h2><%= pluralize(@message.errors.count, 'error') %> prohibited this message from being saved:</h2>
-    <ul>
-      <% @message.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-<% else %>
-  <%= turbo_stream.update :error_explanation, '' %>
-<% end %>
+<%= render 'shared/turbo_stream_error_explanation', model: @message %>
