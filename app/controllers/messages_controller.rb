@@ -5,16 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    if @message.save
-      respond_to do |format|
-        format.turbo_stream
-        format.html { redirect_to messages_url }
-      end
-    else
-      @messages = Message.all
-      render :index, status: :unprocessable_entity
-    end
+    @message = Message.create(message_params)
   end
 
   private
