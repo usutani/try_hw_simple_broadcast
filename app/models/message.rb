@@ -4,6 +4,6 @@ class Message < ApplicationRecord
   private
 
   def broadcast_later
-    broadcast_append_later_to "message"
+    broadcast_append_later_to :message
   end
 end
